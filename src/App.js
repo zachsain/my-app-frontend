@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
-import Form from './Form'
+import Form from './CategoryForm'
 import DisplayItems from './DisplayItems'
 import Categories from './Categories'
 import Home from './Home'

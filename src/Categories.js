@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
-import Form from './Form'
+import CategoryForm from './CategoryForm'
 
 function Categories () {
 
     return (
         <div>
-            <Form />
-
+            <CategoryForm />
+            <h3>Categories:</h3>
         </div>
     )
 }

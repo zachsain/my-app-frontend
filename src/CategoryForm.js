@@ -9,7 +9,7 @@ import React, {useState} from 'react'
 // with add category form when add is clicked update that state 
 // use if / else logic to confirm that the category doesnt already exist 
 
-function Form ({handleNewItem}) {
+function CategoryForm ({handleNewItem}) {
 
   const [newItem, setNewItem] = useState()
   const [itemName, setItemName] = useState("")
@@ -54,17 +54,18 @@ function Form ({handleNewItem}) {
   
   return (
     <div className="add-item-form">
-      <h2>New Item</h2>
+      <h3 className="add-new-category"> Add New Category:</h3>
       <form onSubmit={handleSubmit}>
-        <input onChange={handleAddName} value={itemName} type="text" name="name" placeholder="Item name" />
-        <input onChange={handleAddImage} value={newImage} type="text" name="image" placeholder="Image URL" />
+        {/* <input onChange={handleAddName} value={itemName} type="text" name="name" placeholder="Item name" /> */}
         <input onChange={handleCategory} value={category} type="text" name="category" placeholder="Category" />
-        <input onChange={handleAddPrice} value={price} type="number" name="price" step="0.01" placeholder="Price" />
-        <button type="submit">Add new item</button>
+        <input onChange={handleAddImage} value={newImage} type="text" name="image" placeholder="Image URL" />
+        
+        {/* <input onChange={handleAddPrice} value={price} type="number" name="price" step="0.01" placeholder="Price" /> */}
+        <button type="submit">Add</button>
       </form>
     </div>
   );
   
 }
 
-export default Form 
+export default CategoryForm 
