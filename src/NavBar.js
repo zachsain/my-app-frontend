@@ -3,17 +3,17 @@ import { NavLink } from "react-router-dom";
 
 const linkStyles = {
     display: "inline-block",
-    width: "50px",
-    padding: "12px",
+    width: "100px",
+    padding: "5px",
     margin: "0 6px 6px",
-    background: "blue",
+    background: "black",
     textDecoration: "none",
     color: "white",
   };
   
   function NavBar() {
     return (
-      <div class={'navBar'}>
+      <div className={'navBar'}>
         <NavLink
           to="/"
           exact
