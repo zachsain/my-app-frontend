@@ -4,7 +4,8 @@ import Form from './Form'
 import DisplayItems from './DisplayItems'
 import Categories from './Categories'
 import Home from './Home'
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import NavBar from './NavBar'
 
 
 function App() {
@@ -22,12 +23,7 @@ function App() {
       <Form handleNewItem={handleNewItem} />
       {/* <DisplayItems items={items} />
       <Categories /> */}
-      <NavBar />
-      <Switch>
-        <Route exact path="/categories">
-           <Categories /> 
-        </Route>
-        </Switch>
+      
       
     </div>
   );
