@@ -25,7 +25,7 @@ function Category(props) {
         })
     }, [])
     
-    category.items.map(i => {
+    let items = category.items.map(i => {
         console.log(i.name)
     })
 
