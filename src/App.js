@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
-import Form from './CategoryForm'
-import DisplayItems from './DisplayItems'
-import Categories from './Categories'
-import Home from './Home'
+import DisplayItems from './DisplayItems';
+import Categories from './Categories';
+import Home from './Home';
 import { Routes, Route, Link } from "react-router-dom";
-import NavBar from './NavBar'
+import NavBar from './NavBar';
+import Category from './Category';
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="categories" element={<Categories/>} />
+        <Route path="categories/:id" element={<Category/>} />
       </Routes>
 
 

@@ -16,8 +16,10 @@ function Categories () {
      let categoryList = categories.map(c => {
           return <CategoryCard
                     key={c.id} 
-                    name={c.name}
-                    image={c.image}/>
+                    category={c}
+                    // name={c.name}
+                    // image={c.image}
+                    />
       })
 
       function handleNewCategory(formData){
