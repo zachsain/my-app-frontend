@@ -20,9 +20,27 @@ function Categories () {
                     image={c.image}/>
       })
 
+      function handleNewCategory(formData){
+
+        console.log(formData)
+
+
+        fetch("http://localhost:9292/categories", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+            .then(r => r.json())
+            .then(newItem =>  setCategories([...categories, newItem]));
+
+
+      }
+
     return (
         <div>
-            <CategoryForm />
+            <CategoryForm handleNewCategory={handleNewCategory}/>
             <h3>Categories:</h3>
             {categoryList}
 
