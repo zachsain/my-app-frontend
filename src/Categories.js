@@ -10,7 +10,10 @@ function Categories () {
     useEffect(() => {
         fetch("http://localhost:9292/categories")
         .then((r) => r.json())
-        .then(categories => (setCategories(categories), console.log(categories)))
+        .then(categories => {
+            setCategories(categories)
+            console.log(categories)
+        })
       },[])
 
      let categoryList = categories.map(c => {

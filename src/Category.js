@@ -5,25 +5,33 @@ import Item from './ItemCard';
 
 function Category(props) {
 
+    const params = useParams()
+    const [id, setId] = useState(params.id)
+
     const [category, setCategory] = useState({
         items: []
     })
     const [itemFormFlad, setItemFormFlag] = useState(false)
 
-    const params = useParams()
-    debugger;
+   
 
     useEffect(() => {
-        debugger;
-        fetch(`http://localhost:9292/categories/${props.match.params.id}`)
+      
+        fetch(`http://localhost:9292/categories/${id}`)
         .then((r) => r.json())
-        .then(data=> (setCategory(data), console.log(data)))
+        .then(data=> {
+            console.log(data)
+            setCategory(data)
+        })
     }, [])
     
+    category.items.map(i => {
+        console.log(i.name)
+    })
 
     return (
         <div>
-            <h3>Hello</h3>
+            <h3>{category.name}</h3>
 
         </div>
     )

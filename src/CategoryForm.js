@@ -6,10 +6,10 @@ function CategoryForm ({handleNewCategory}) {
   const [categoryName, setCategory] = useState("")
 
   
-  const formData = {
-    name : categoryName, 
-    image : newImage,
-  }
+  // const formData = {
+  //   name : categoryName, 
+  //   image : newImage,
+  // }
 
   function handleCategory(event){
     console.log(event.target.value)
@@ -28,7 +28,14 @@ function CategoryForm ({handleNewCategory}) {
   }
 
   function handleSubmit(e){
+
     e.preventDefault()
+
+    const formData = {
+      name : categoryName, 
+      image : newImage,
+    }
+    
     handleNewCategory(formData)
     // setCategory(formData) //??
     clearForm()
