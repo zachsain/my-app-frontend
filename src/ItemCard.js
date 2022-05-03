@@ -1,21 +1,23 @@
 import React, {useState} from 'react'
 
 
-function ItemCard({image, name, price,}){
+function ItemCard({item}){
 
     const [liked, setLiked] = useState(false)
+    
 
     return (
-        <li className="card">
-          <img src={image} alt={name} />
-          <h4>{name}</h4>
-          <p>Price: {price}</p>
+        <ul className="card">
+          <h4>{item.name}</h4>
+          <img src={item.image} alt={item.name} />
+         
+          <p>Price: {item.price}</p>
           {liked ? (
             <button onClick={() => setLiked(!liked)} className="primary">★</button>
           ) : (
             <button onClick={() => setLiked(!liked)} >☆</button>
           )}
-        </li>
+        </ul>
       );
 }
 

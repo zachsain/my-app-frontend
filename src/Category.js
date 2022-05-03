@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import Item from './ItemCard';
+import ItemCard from './ItemCard';
 
 
 function Category(props) {
@@ -25,14 +25,20 @@ function Category(props) {
         })
     }, [])
     
-    let items = category.items.map(i => {
-        console.log(i.name)
+    let item = category.items.map(i => {
+       return <ItemCard
+       key={i.id} 
+       item={i} />
+       console.log(i)
     })
 
     return (
         <div>
-            <h3>{category.name}</h3>
-
+            <br/>
+            <h3>{category.name}:</h3>
+            <hr/>
+            <br/>
+            {item}           
         </div>
     )
 }
