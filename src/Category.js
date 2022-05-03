@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import ItemCard from './ItemCard';
+import ItemForm from './ItemForm'
 
 
 function Category(props) {
@@ -31,7 +32,9 @@ function Category(props) {
     })
 
     return (
+
         <div>
+            <ItemForm />
             <br/>
             <h3>{category.name}:</h3>
             <hr/>

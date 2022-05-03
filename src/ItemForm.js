@@ -54,10 +54,10 @@ function ItemForm ({handleNewItem}) {
   
   return (
     <div className="add-item-form">
-      <h3 className="add-new-category"> Add New Category:</h3>
+      <h3 className="add-new-item"> Add New Item:</h3>
       <form onSubmit={handleSubmit}>
         <input onChange={handleAddName} value={itemName} type="text" name="name" placeholder="Item name" />
-        <input onChange={handleCategory} value={category} type="text" name="category" placeholder="Category" />
+        <input onChange={handleCategory} value={category} type="text" name="item" placeholder="Category" />
         <input onChange={handleAddImage} value={newImage} type="text" name="image" placeholder="Image URL" />
         <input onChange={handleAddPrice} value={price} type="number" name="price" step="0.01" placeholder="Price" />
         <button type="submit">Add</button>
