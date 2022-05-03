@@ -5,7 +5,7 @@ import CategoryCard from './CategoryCard'
 function Categories () {
 
     const [categories, setCategories] = useState([])
-    const [categoryFormFlag, setCategoryFormFlag] = useState(false)
+   
 
     useEffect(() => {
         fetch("http://localhost:9292/categories")
@@ -20,8 +20,6 @@ function Categories () {
           return <CategoryCard
                     key={c.id} 
                     category={c}
-                    // name={c.name}
-                    // image={c.image}
                     />
       })
 
@@ -38,7 +36,7 @@ function Categories () {
             body: JSON.stringify(formData),
           })
             .then(r => r.json())
-            .then(newItem =>  setCategories([...categories, newItem]));
+            .then(newCategory =>  setCategories([...categories, newCategory]));
 
       }
 

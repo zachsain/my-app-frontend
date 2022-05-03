@@ -28,26 +28,31 @@ function Category(props) {
        return <ItemCard
        key={i.id} 
        item={i} />
-       console.log(i)
     })
 
-    function handleNewItem(formData) {
+
+    function handleNewItem(formData){
 
         console.log(formData)
-        
-    //     fetch("http://localhost:9292/categories", {
-    //         method: "POST",
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify(formData),
-    //       })
-    //         .then(r => r.json())
-    //         .then(newItem =>  setCategories([...categories, newItem]));
 
-    //   }
 
-    }
+        fetch(`http://localhost:9292/categories/${id}/items`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+            .then(r => r.json())
+            .then(newItem => {
+                setCategory([...category, newItem])
+                console.log(category)
+            });
+         }
+
+
+    // `http://localhost:9292/categories/{id}/items`
+    
 
     return (
 
