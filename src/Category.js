@@ -31,10 +31,29 @@ function Category(props) {
        console.log(i)
     })
 
+    function handleNewItem(formData) {
+
+        console.log(formData)
+        
+    //     fetch("http://localhost:9292/categories", {
+    //         method: "POST",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(formData),
+    //       })
+    //         .then(r => r.json())
+    //         .then(newItem =>  setCategories([...categories, newItem]));
+
+    //   }
+
+    }
+
     return (
 
         <div>
-            <ItemForm />
+            <ItemForm 
+            handleNewItem={handleNewItem}/>
             <br/>
             <h3>{category.name}:</h3>
             <hr/>

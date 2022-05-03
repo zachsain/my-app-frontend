@@ -15,14 +15,13 @@ function ItemForm ({handleNewItem}) {
   const [itemName, setItemName] = useState("")
   const [newImage, setNewImage] = useState("")
   const [price, setPrice] = useState("")
-  const [category, setCategory] = useState("")
+
 
   
   const formData = {
     name : itemName, 
     image : newImage,
     price : price,
-    category : category
   }
 
   function handleAddName(event){
@@ -48,16 +47,12 @@ function ItemForm ({handleNewItem}) {
     console.log(e)
   }
 
-  function handleCategory(event){
-    setCategory(event.target.value)
-  }
   
   return (
     <div className="add-item-form">
       <h3 className="add-new-item"> Add New Item:</h3>
       <form onSubmit={handleSubmit}>
         <input onChange={handleAddName} value={itemName} type="text" name="name" placeholder="Item name" />
-        <input onChange={handleCategory} value={category} type="text" name="item" placeholder="Category" />
         <input onChange={handleAddImage} value={newImage} type="text" name="image" placeholder="Image URL" />
         <input onChange={handleAddPrice} value={price} type="number" name="price" step="0.01" placeholder="Price" />
         <button type="submit">Add</button>
