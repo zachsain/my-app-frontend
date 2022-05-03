@@ -35,7 +35,6 @@ function Category(props) {
 
         console.log(formData)
 
-
         fetch(`http://localhost:9292/categories/${id}/items`, {
             method: "POST",
             headers: {
@@ -45,7 +44,9 @@ function Category(props) {
           })
             .then(r => r.json())
             .then(newItem => {
+                
                 setCategory([...category, newItem])
+                debugger;
                 console.log(category)
             });
          }

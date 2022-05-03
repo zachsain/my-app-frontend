@@ -14,7 +14,7 @@ function ItemForm ({handleNewItem}) {
   const [newItem, setNewItem] = useState()
   const [itemName, setItemName] = useState("")
   const [newImage, setNewImage] = useState("")
-  const [price, setPrice] = useState("")
+  const [price, setPrice] = useState(0)
 
 
   
