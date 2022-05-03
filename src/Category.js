@@ -11,9 +11,7 @@ function Category(props) {
     const [category, setCategory] = useState({
         items: []
     })
-    const [itemFormFlad, setItemFormFlag] = useState(false)
-
-   
+    
 
     useEffect(() => {
       

@@ -40,7 +40,6 @@ function Categories () {
             .then(r => r.json())
             .then(newItem =>  setCategories([...categories, newItem]));
 
-
       }
 
     return (

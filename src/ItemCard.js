@@ -18,7 +18,7 @@ function ItemCard({item}){
             <button onClick={() => setLiked(!liked)} >☆</button>
           )}
         </ul>
-      );
+      ); 
 }
 
 
