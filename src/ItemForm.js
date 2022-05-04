@@ -18,11 +18,11 @@ function ItemForm ({handleNewItem}) {
 
 
   
-  const formData = {
-    name : itemName, 
-    image : newImage,
-    price : price,
-  }
+//   const formData = {
+//     name : itemName, 
+//     image : newImage,
+//     price : price,
+//   }
 
   function handleAddName(event){
     console.log(event.target.value)
@@ -35,13 +35,20 @@ function ItemForm ({handleNewItem}) {
   }
 
   function handleAddPrice(event){
-    setPrice(parseInt(event.target.value))
+    setPrice(event.target.value)
 
   }
 
   function handleSubmit(e){
     e.preventDefault()
-    // console.log(formData)
+
+    const formData = {
+        name : itemName, 
+        image : newImage,
+        price : price,
+      }
+   
+
     handleNewItem(formData)
     setNewItem(formData)
     console.log(e)
@@ -54,7 +61,7 @@ function ItemForm ({handleNewItem}) {
       <form onSubmit={handleSubmit}>
         <input onChange={handleAddName} value={itemName} type="text" name="name" placeholder="Item name" />
         <input onChange={handleAddImage} value={newImage} type="text" name="image" placeholder="Image URL" />
-        <input onChange={handleAddPrice} value={price} type="number" name="price" step="0.01" placeholder="Price" />
+        <input onChange={handleAddPrice} value={price} type="number" name="price" placeholder="Price" />
         <button type="submit">Add</button>
       </form>
     </div>

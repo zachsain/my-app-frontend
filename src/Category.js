@@ -25,6 +25,7 @@ function Category(props) {
     }, [])
     
     let item = category.items.map(i => {
+        // debugger; 
        return <ItemCard
        key={i.id} 
        item={i} />
@@ -45,9 +46,9 @@ function Category(props) {
             .then(r => r.json())
             .then(newItem => {
                 
-                setCategory([...category.items, newItem])
-                debugger;
-                console.log(category)
+                setCategory([...category, newItem])
+                // debugger;
+                // console.log(category)
             });
          }
 
