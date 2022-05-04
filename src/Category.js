@@ -44,16 +44,10 @@ function Category(props) {
             body: JSON.stringify(formData),
           })
             .then(r => r.json())
-            .then(newItem => {
-                
-                setCategory([...category, newItem])
-                // debugger;
-                // console.log(category)
-            });
+            .then(newItem => setCategory([...category, newItem]));
          }
 
 
-    // `http://localhost:9292/categories/{id}/items`
     
 
     return (
