@@ -1,9 +1,13 @@
 import React, {useState} from 'react'
 
 
-function ItemCard({item}){
+function ItemCard({item, handleDelete}){
 
     const [liked, setLiked] = useState(false)
+
+    function handleDelete(event){
+        handleDelete(event.currentTarget.id)
+    }
     
 
     return (
@@ -17,6 +21,7 @@ function ItemCard({item}){
           ) : (
             <button onClick={() => setLiked(!liked)} >☆</button>
           )}
+          <button id={item.id} onClick={handleDelete}>Delete</button>
         </ul>
       ); 
 }

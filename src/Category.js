@@ -12,6 +12,7 @@ function Category(props) {
     const [category, setCategory] = useState({
         items: []
     })
+    // const [category, setCategory] = useState([])
     
 
     useEffect(() => {
@@ -27,9 +28,22 @@ function Category(props) {
     let item = category.items.map(i => {
         // debugger; 
        return <ItemCard
+       handleDelete={handleDelete}
        key={i.id} 
        item={i} />
     })
+
+    function handleDelete(e){
+
+        fetch(`http:/localhost:9292/items/${e}`, {
+            method: "DELETE",
+          });
+
+          const updatedItems = item.filter((item) => item.id !== e);
+          setCategory(updatedItems)
+        //   onMessageDelete(id);
+    }
+
 
 
     function handleNewItem(formData){
