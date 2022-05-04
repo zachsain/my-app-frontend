@@ -45,7 +45,7 @@ function Category(props) {
             .then(r => r.json())
             .then(newItem => {
                 
-                setCategory([...category, newItem])
+                setCategory([...category.items, newItem])
                 debugger;
                 console.log(category)
             });
