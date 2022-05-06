@@ -6,9 +6,9 @@ function ItemCard({item, handleDelete}){
     const [liked, setLiked] = useState(false)
 
     function handleDeleteClick(event){
-        let convertToString = event.currentTarget.id.toString()
+        // let convertToString = event.currentTarget.id.toString()
         console.log(event.currentTarget.id)
-        handleDelete(convertToString)
+        handleDelete(event.currentTarget.id)
     }
     
 

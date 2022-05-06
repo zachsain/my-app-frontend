@@ -61,8 +61,8 @@ function Category() {
           });
 
           const updatedItems = category.items.filter((item) => {
-              debugger;
-           return item.id !== buttonId
+            //   debugger;
+           return item.id.toString() !== buttonId
           });
           console.log(updatedItems)
           let filteredCategory = {...category}
