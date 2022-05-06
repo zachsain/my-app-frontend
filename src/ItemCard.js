@@ -5,7 +5,8 @@ function ItemCard({item, handleDelete}){
 
     const [liked, setLiked] = useState(false)
 
-    function handleDelete(event){
+    function handleDeleteClick(event){
+        console.log(event.currentTarget.id)
         handleDelete(event.currentTarget.id)
     }
     
@@ -21,7 +22,7 @@ function ItemCard({item, handleDelete}){
           ) : (
             <button onClick={() => setLiked(!liked)} >☆</button>
           )}
-          <button id={item.id} onClick={handleDelete}>Delete</button>
+          <button id={item.id} onClick={handleDeleteClick}>Delete</button>
         </ul>
       ); 
 }

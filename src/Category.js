@@ -33,20 +33,27 @@ function Category(props) {
        item={i} />
     })
 
-    function handleDelete(e){
+    
 
-        fetch(`http:/localhost:9292/items/${e}`, {
+    function handleDelete(buttonId){
+        console.log(buttonId)
+
+        fetch(`http:/localhost:9292/items/${buttonId}`, {
             method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
           });
 
-          const updatedItems = item.filter((item) => item.id !== e);
-          setCategory(updatedItems)
+        //   const updatedItems = item.filter((item) => item.id !== e);
+        //   setCategory(updatedItems)
         //   onMessageDelete(id);
     }
 
 
 
     function handleNewItem(formData){
+        let copyOfObj = category
 
         console.log(formData)
 
@@ -58,7 +65,7 @@ function Category(props) {
             body: JSON.stringify(formData),
           })
             .then(r => r.json())
-            .then(newItem => setCategory([...category, newItem]));
+            .then(newItem => setCategory([copyOfObj, newItem]));
          }
 
 
