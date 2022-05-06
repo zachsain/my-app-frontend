@@ -23,7 +23,7 @@ function ItemCard({item, handleDelete}){
           ) : (
             <button onClick={() => setLiked(!liked)} >☆</button>
           )}
-          <button id={item.id.toString()} onClick={handleDeleteClick}>Delete</button>
+          <button id={item.id} onClick={handleDeleteClick}>Delete</button>
         </ul>
       ); 
 }

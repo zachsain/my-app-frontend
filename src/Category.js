@@ -53,16 +53,21 @@ function Category() {
     function handleDelete(buttonId){
         console.log(buttonId)
 
-        fetch(`http:/localhost:9292/items/${buttonId}`, {
+        fetch(`http://localhost:9292/items/${buttonId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             }
           });
 
-        //   const updatedItems = item.filter((item) => item.id !== e);
-        //   setCategory(updatedItems)
-        //   onMessageDelete(id);
+          const updatedItems = category.items.filter((item) => {
+              debugger;
+           return item.id !== buttonId
+          });
+          console.log(updatedItems)
+          let filteredCategory = {...category}
+          filteredCategory.items = updatedItems
+          setCategory(filteredCategory)
     }
 
 
