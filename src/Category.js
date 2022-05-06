@@ -4,15 +4,17 @@ import ItemCard from './ItemCard';
 import ItemForm from './ItemForm'
 
 
-function Category(props) {
+function Category() {
 
     const params = useParams()
     const [id, setId] = useState(params.id)
 
-    const [category, setCategory] = useState({
-        items: []
-    })
-    // const [category, setCategory] = useState([])
+    // const [category, setCategory] = useState({
+    //     items: []
+    // })
+
+    const [category, setCategory] = useState({})
+    const [categorySet, setCategorySet] = useState(false)
     
 
     useEffect(() => {
@@ -22,16 +24,29 @@ function Category(props) {
         .then(data=> {
             console.log(data)
             setCategory(data)
+            setCategorySet(true)
         })
     }, [])
     
-    let item = category.items.map(i => {
-        // debugger; 
+    // let item = category.items.map(i => {
+    //     // debugger; 
+    //    return <ItemCard
+    //    handleDelete={handleDelete}
+    //    key={i.id} 
+    //    item={i} />
+    // })
+
+    let itemList = []
+
+    
+    if (categorySet) {
+        itemList = category.items.map(i => {
        return <ItemCard
        handleDelete={handleDelete}
        key={i.id} 
        item={i} />
-    })
+    }) 
+    }
 
     
 
@@ -53,7 +68,7 @@ function Category(props) {
 
 
     function handleNewItem(formData){
-        let copyOfObj = category
+        // let copyOfObj = category
 
         console.log(formData)
 
@@ -65,10 +80,19 @@ function Category(props) {
             body: JSON.stringify(formData),
           })
             .then(r => r.json())
-            .then(newItem => setCategory([copyOfObj, newItem]));
+            .then(newItem => {
+                const itemList = [...category.items, newItem]
+                let updatedCategory = {...category}
+                updatedCategory.items = itemList
+                setCategory(updatedCategory)
+            }) 
          }
 
 
+        //  .then((newItem)=> {
+        //     const updatedCategory = [...category, newItem];
+        //     setCategory(updatedCategory);
+        //     })
     
 
     return (
@@ -80,8 +104,8 @@ function Category(props) {
             <h3>{category.name}:</h3>
             <hr/>
             <br/>
-            {item}           
-        </div>
+            {itemList ? itemList : null}          
+        </div> 
     )
 }
 
