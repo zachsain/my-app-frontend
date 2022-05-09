@@ -9,12 +9,13 @@ import React, {useState} from 'react'
 // with add category form when add is clicked update that state 
 // use if / else logic to confirm that the category doesnt already exist 
 
-function ItemEditForm ({handleEditItem}) {
+function ItemEditForm ({handleEditItem, item}) {
 
   const [newItem, setNewItem] = useState()
   const [itemName, setItemName] = useState("")
   const [newImage, setNewImage] = useState("")
   const [price, setPrice] = useState(0)
+  const [itemId, setId] = useState(item.id)
 
 
   function handleAddName(event){
@@ -33,15 +34,16 @@ function ItemEditForm ({handleEditItem}) {
   }
 
   function handleSubmit(e){
+
     e.preventDefault()
 
     const formData = {
+        id: itemId,
         name : itemName, 
         image : newImage,
         price : price,
       }
    
-
     handleEditItem(formData)
     setNewItem(formData)
     console.log(e)

@@ -28,20 +28,7 @@ function Category() {
         })
     }, [])
     
-    // let item = category.items.map(i => {
-    //     // debugger; 
-    //    return <ItemCard
-    //    handleDelete={handleDelete}
-    //    key={i.id} 
-    //    item={i} />
-    // })
-
     let itemList = []
-
-    function editItem(formData){
-        console.log(formData)
-        
-    }
 
     
     if (categorySet) {
@@ -54,7 +41,27 @@ function Category() {
     }) 
     }
 
-    
+    function editItem(formData){
+
+        console.log(formData)
+
+        fetch(`http://localhost:9292/items/${formData.id}/edit`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+            .then(r => r.json())
+            .then(editedItem => {
+                console.log(editedItem)
+                // const itemList = [...category.items, newItem]
+                // let updatedCategory = {...category}
+                // updatedCategory.items = itemList
+                // setCategory(updatedCategory)
+            }) 
+
+    }
 
     function handleDelete(buttonId){
         console.log(buttonId)

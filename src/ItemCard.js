@@ -15,6 +15,7 @@ function ItemCard({item, handleDelete, handleEditItem}){
     
     const editMenu = <ItemEditForm
                         handleEditItem={handleEditItem} 
+                        item={item}
                      />
 
     
