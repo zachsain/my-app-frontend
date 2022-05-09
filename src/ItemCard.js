@@ -23,7 +23,7 @@ function ItemCard({item, handleDelete, handleEditItem}){
     return (
         <ul className="card">
           <h4>{item.name}</h4>
-          <img src={item.image} alt={item.name} />
+          <img className="item-image" src={item.image} alt={item.name} />
          
           <p>Price: {item.price}</p>
           {liked ? (

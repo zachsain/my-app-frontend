@@ -53,4 +53,6 @@
  box-shadow: #61dafb;
 }
 
-
+.item-image {
+  width: 250px
+}
