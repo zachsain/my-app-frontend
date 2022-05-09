@@ -38,13 +38,19 @@ function Category() {
 
     let itemList = []
 
+    function editItem(formData){
+        console.log(formData)
+        
+    }
+
     
     if (categorySet) {
         itemList = category.items.map(i => {
        return <ItemCard
        handleDelete={handleDelete}
        key={i.id} 
-       item={i} />
+       item={i} 
+       handleEditItem={editItem}/>
     }) 
     }
 

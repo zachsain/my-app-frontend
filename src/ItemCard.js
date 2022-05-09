@@ -1,15 +1,22 @@
 import React, {useState} from 'react'
+import ItemEditForm from './ItemEditForm'
 
 
-function ItemCard({item, handleDelete}){
+function ItemCard({item, handleDelete, handleEditItem}){
 
     const [liked, setLiked] = useState(false)
+    const [editClick, setEdit] = useState(false)
 
     function handleDeleteClick(event){
         // let convertToString = event.currentTarget.id.toString()
         console.log(event.currentTarget.id)
         handleDelete(event.currentTarget.id)
     }
+    
+    const editMenu = <ItemEditForm
+                        handleEditItem={handleEditItem} 
+                     />
+
     
 
     return (
@@ -24,6 +31,9 @@ function ItemCard({item, handleDelete}){
             <button onClick={() => setLiked(!liked)} >☆</button>
           )}
           <button id={item.id} onClick={handleDeleteClick}>Delete</button>
+          <button id={item.id} onClick={() => setEdit(!editClick) }>Edit</button>
+          {editClick ? editMenu : null }
+
         </ul>
       ); 
 }
