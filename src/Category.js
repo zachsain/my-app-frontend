@@ -9,10 +9,6 @@ function Category() {
     const params = useParams()
     const [id, setId] = useState(params.id)
 
-    // const [category, setCategory] = useState({
-    //     items: []
-    // })
-
     const [category, setCategory] = useState({})
     const [categorySet, setCategorySet] = useState(false)
     
@@ -37,7 +33,8 @@ function Category() {
        handleDelete={handleDelete}
        key={i.id} 
        item={i} 
-       handleEditItem={editItem}/>
+       handleEditItem={editItem}
+       />
     }) 
     }
 
@@ -86,8 +83,7 @@ function Category() {
 
 
     function handleNewItem(formData){
-        // let copyOfObj = category
-
+       
         console.log(formData)
 
         fetch(`http://localhost:9292/categories/${id}/items`, {
@@ -105,12 +101,6 @@ function Category() {
                 setCategory(updatedCategory)
             }) 
          }
-
-
-        //  .then((newItem)=> {
-        //     const updatedCategory = [...category, newItem];
-        //     setCategory(updatedCategory);
-        //     })
     
 
     return (

@@ -20,7 +20,6 @@ function App() {
   return (
     <div className="App">
       <header className="header">rentmystuff.com</header>
-      {/* <img className="image-rent" src="https://www.moneymagpie.com/cl_resize/cl9s2JcBLc8Lob08wksMSakpLnD4fWRplF23NLE5CUg/rs:fill:500:0/g:ce/q:70/aHR0cHM6Ly93d3cubW9uZXltYWdwaWUuY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDExLzAyL01vbmV5TWFncGllX0Zvci1yZW50LmpwZw"/> */}
 
       <NavBar />
       <Routes>
