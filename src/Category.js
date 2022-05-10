@@ -29,20 +29,20 @@ function Category() {
     
     if (categorySet) {
         itemList = category.items.map(i => {
-       return <ItemCard
-       handleDelete={handleDelete}
-       key={i.id} 
-       item={i} 
-       handleEditItem={editItem}
+            return <ItemCard
+            handleDelete={handleDelete}
+            key={i.id} 
+            item={i} 
+            handleEditItem={editItem}
        />
-    }) 
+        }) 
     }
 
     function editItem(formData){
 
         console.log(formData)
 
-        fetch(`http://localhost:9292/items/${formData.id}/edit`, {
+        fetch(`http://localhost:9292/items/${formData.id}`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",
@@ -52,15 +52,16 @@ function Category() {
             .then(r => r.json())
             .then(editedItem => {
                 console.log(editedItem)
-                // const itemList = [...category.items, newItem]
-                // let updatedCategory = {...category}
+                const newItemList = category.items.map(i => i.id == editedItem.id ? editedItem : i)
+                let updatedCategory = {...category, items: newItemList}
                 // updatedCategory.items = itemList
-                // setCategory(updatedCategory)
+                // console.log(updatedCategory)
+                setCategory(updatedCategory)
             }) 
 
     }
 
-    function handleDelete(buttonId){
+    function handleDelete(buttonId) {
         console.log(buttonId)
 
         fetch(`http://localhost:9292/items/${buttonId}`, {
