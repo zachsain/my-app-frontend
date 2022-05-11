@@ -12,9 +12,9 @@ import React, {useState} from 'react'
 function ItemEditForm ({handleEditItem, item}) {
 
   const [newItem, setNewItem] = useState()
-  const [itemName, setItemName] = useState("")
-  const [newImage, setNewImage] = useState("")
-  const [price, setPrice] = useState(0)
+  const [itemName, setItemName] = useState(item.name)
+  const [newImage, setNewImage] = useState(item.image)
+  const [price, setPrice] = useState(item.price)
   const [itemId, setId] = useState(item.id)
 
 

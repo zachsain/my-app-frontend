@@ -39,6 +39,14 @@ function ItemForm ({handleNewItem}) {
 
   }
 
+  function clearForm(){
+    setItemName("")
+    setNewImage("")
+    setPrice(0)
+
+
+  }
+
   function handleSubmit(e){
     e.preventDefault()
 
@@ -47,10 +55,11 @@ function ItemForm ({handleNewItem}) {
         image : newImage,
         price : price,
       }
-   
+    
 
     handleNewItem(formData)
     setNewItem(formData)
+    clearForm()
     console.log(e)
   }
 

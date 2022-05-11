@@ -82,7 +82,6 @@ function Category() {
     }
 
 
-
     function handleNewItem(formData){
        
         console.log(formData)
