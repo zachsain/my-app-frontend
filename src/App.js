@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
-import DisplayItems from './DisplayItems';
 import Categories from './Categories';
 import Home from './Home';
 import { Routes, Route, Link } from "react-router-dom";
@@ -19,7 +18,7 @@ function App() {
   
   return (
     <div className="App">
-      <header className="header">rentmystuff.com</header>
+      <header className="header">rentalDB</header>
 
       <NavBar />
       <Routes>

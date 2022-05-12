@@ -1,70 +1,96 @@
-READ ME UPDATE
+READ ME 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About The Project
 
-## Available Scripts
+<!--Add Screenshot here -->
 
-In the project directory, you can run:
 
-### `npm start`
+RentalDB is an inventory mangement system designed for users who want to manage their rental products. It makes it easy for rental shop owners to add new categories of products as well as new items of within a category. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+RentalDB can also be used as a showroom to potential renters, allowing users to a favorite a particular item they like. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Features of RentalDB:
+* Create and manage a digitial inventory system for your products and their categories. 
+* Digitize your rental catelog. 
+* Build and manage your own database of categories and items 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Built With
 
-### `npm run build`
+* [React.js](https://reactjs.org/)
+* [Ruby](https://www.ruby-lang.org/en/)
+* [Sinatra](http://sinatrarb.com/)
+* [SQLite3](https://www.sqlite.org/index.html)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- GETTING STARTED -->
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get a local copy up and running follow these steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+* ruby
+  You might already have ruby installed, run this to check 
+  ```sh
+  ruby -v
+  ```
+  If you don't have ruby, check this [documentation](https://www.ruby-lang.org/en/documentation/installation/#rvm) for how to install it
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a new directory on your machine and run the following commands in your terminal. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the front-end repo in your root directory
+   ```sh
+   git clone https://github.com/stevehvaughn/banddb-frontend.git
+   ```
+2. Clone the back-end repo in your root directory 
+   ```sh
+   git clone https://github.com/stevehvaughn/banddb-backend.git
+   ```
+3. Install NPM packages in the frontend directory
+   ```sh
+   npm install
+   ```
+4. Install Gemfile packages in the backend directory
+   ```sh
+   bundle install
+   ```
+5. Start the rake server in the backend directory
+   ```sh
+   rake server
+   ```
+6. Start the App in the frontend directory
+   ```sh
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!-- USAGE EXAMPLES -->
+## Usage
 
-## Learn More
+### Students Tab
+In the Students Tab you can see all of your students. On each student you can assign them a locker, and also easily access their locker combination if they forget it! You can also add new students using the form at the top of the page, or delete a student that is no longer attending your school. 
+<p align='center'>
+  <img width='75%' src="https://user-images.githubusercontent.com/82396393/134093239-9996168c-43ca-4d84-98a0-4f47462bb416.gif"/>
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Music Library Tab
+In the Music Library Tab you can see all of the pieces you have in your library. 
+<p align='center'>
+  <img width='75%' src="https://user-images.githubusercontent.com/82396393/134093303-25697d55-9ad7-40cc-bfa5-a7638be9500a.gif"/>
+</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Instrument Inventory Tab
+In the Instrument Inventory Tab you can see information about the instruments in the school such as condition, brand, model, and serial number. 
+<p align='center'>
+  <img width='75%' src="https://user-images.githubusercontent.com/82396393/134093414-7b0bedda-64c2-4a36-ba2c-3ad71aaa6e4f.gif"/>
+</p>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Lockers Tab
+In the Lockers Tab you see a full list of all the lockers in your room, and any students that are assigned to them. This can be another way to easily access locker information for a student. 
+<p align='center'>
+  <img width='75%' src="https://user-images.githubusercontent.com/82396393/134093497-07bc57f0-4d92-4b57-9d5b-601447a67eb3.gif"/>
