@@ -16,14 +16,6 @@ function ItemForm ({handleNewItem}) {
   const [newImage, setNewImage] = useState("")
   const [price, setPrice] = useState(0)
 
-
-  
-//   const formData = {
-//     name : itemName, 
-//     image : newImage,
-//     price : price,
-//   }
-
   function handleAddName(event){
     console.log(event.target.value)
     setItemName(event.target.value)

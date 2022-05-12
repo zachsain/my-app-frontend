@@ -54,8 +54,6 @@ function Category() {
                 console.log(editedItem)
                 const newItemList = category.items.map(i => i.id == editedItem.id ? editedItem : i)
                 let updatedCategory = {...category, items: newItemList}
-                // updatedCategory.items = itemList
-                // console.log(updatedCategory)
                 setCategory(updatedCategory)
             }) 
 

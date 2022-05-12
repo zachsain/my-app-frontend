@@ -1,13 +1,5 @@
 import React, {useState} from 'react'
 
-// will need to use props to push up info from here to display the cards 
-
-
-// addig dynamic category: 
-// create state with existing categories...
-// loop through state in a select tag 
-// with add category form when add is clicked update that state 
-// use if / else logic to confirm that the category doesnt already exist 
 
 function ItemEditForm ({handleEditItem, item}) {
 

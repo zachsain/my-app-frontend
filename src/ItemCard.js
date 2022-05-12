@@ -8,7 +8,7 @@ function ItemCard({item, handleDelete, handleEditItem}){
     const [editClick, setEdit] = useState(false)
 
     function handleDeleteClick(event){
-        // let convertToString = event.currentTarget.id.toString()
+       
         console.log(event.currentTarget.id)
         handleDelete(event.currentTarget.id)
     }
