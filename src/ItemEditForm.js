@@ -25,6 +25,12 @@ function ItemEditForm ({handleEditItem, item}) {
 
   }
 
+  function clearForm(){
+    setItemName("")
+    setNewImage("")
+
+  }
+
   function handleSubmit(e){
 
     e.preventDefault()
@@ -39,6 +45,7 @@ function ItemEditForm ({handleEditItem, item}) {
     handleEditItem(formData)
     setNewItem(formData)
     console.log(e)
+    clearForm()
   }
 
   
