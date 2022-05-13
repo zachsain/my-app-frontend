@@ -66,7 +66,7 @@ Create a new directory on your machine and run the following commands in your te
    npm start
    ```
 
-<!-- USAGE EXAMPLES -->
+
 ## How It Works
 
 ### Home Tab
