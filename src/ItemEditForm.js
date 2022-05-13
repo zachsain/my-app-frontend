@@ -28,6 +28,7 @@ function ItemEditForm ({handleEditItem, item}) {
   function clearForm(){
     setItemName("")
     setNewImage("")
+    setPrice(0)
 
   }
 
